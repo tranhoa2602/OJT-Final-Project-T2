@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { signUp, logIn } from "./assets/service/authService";
+import Sidebar from "./Sidebar";
+import "./App.scss";
 
 const App = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("admin");
@@ -64,6 +72,17 @@ const App = () => {
           <p>Your role is: {userRole}</p>
         </div>
       )}
+
+      <div className="section">
+      <button className="open-btn" onClick={toggleSidebar}>
+        &#9776; Open Sidebar
+      </button>
+      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+      <div className="content">
+        <h1>Main Content</h1>
+        <p>This is the main content area.</p>
+      </div>
+      </div>
     </div>
   );
 };

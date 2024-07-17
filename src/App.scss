@@ -1,0 +1,27 @@
+/* src/App.scss */
+.App {
+    display: flex;
+  }
+  
+  .content {
+    margin-left: 0; /* Adjusted for when sidebar is closed */
+    padding: 20px;
+    width: 100%;
+    transition: margin-left 0.3s;
+  
+    &.sidebar-open {
+      margin-left: 250px; /* Same as the width of the sidebar */
+    }
+  }
+  
+  .open-btn {
+    font-size: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+  }
+  

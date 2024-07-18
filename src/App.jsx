@@ -13,7 +13,7 @@ import Technology from "./assets/Components/Technology/Technology";
 import ProgramingLanguage from "./assets/Components/ProgramingLanguage/ProgramingLanguage";
 import Employee from "./assets/Components/Employee/Employee";
 import ProjectManagement from "./assets/Components/ProjectManagement/ProjectManagement";
-import Login from "./assets/Page/Login";
+import Login from "./assets/Page/Login/Login";
 
 const App = () => {
   const [user, setUser] = useState(null);

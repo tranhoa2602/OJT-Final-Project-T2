@@ -3,6 +3,9 @@ import React from "react";
 const Employee = () => {
   return (
     <main>
+      <div>
+        <h1>This is employee page</h1>
+      </div>
       <section className="emploi_profile">
         <div className="view_emploi"></div>
         <div className="create_emploi"></div>

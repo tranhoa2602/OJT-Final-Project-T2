@@ -3,6 +3,9 @@ import React from "react";
 const AccountManagement = () => {
   return (
     <main>
+      <div>
+        <h1> This is admin page </h1>
+      </div>
       <section className="account">
         <div className="view_account"></div>
         <div className="creat_account"></div>

@@ -14,12 +14,19 @@ import ProgramingLanguage from "./assets/Components/ProgramingLanguage/Programin
 import Employee from "./assets/Components/Employee/Employee";
 import ProjectManagement from "./assets/Components/ProjectManagement/ProjectManagement";
 import Sidebar from "./Sidebar";
+
 import "./App.scss";
 
 const Auth = ({ onSignUp, onLogIn, user, userRole }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("moderator");
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   return (
     <div>
@@ -57,7 +64,7 @@ const Auth = ({ onSignUp, onLogIn, user, userRole }) => {
         &#9776; Open Sidebar
       </button>
       <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-      <div className="content">
+      <div className={`content ${isSidebarOpen ? 'shifted' : ''}`}>
         <h1>Main Content</h1>
         <p>This is the main content area.</p>
       </div>

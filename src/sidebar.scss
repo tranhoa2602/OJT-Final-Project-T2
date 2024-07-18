@@ -7,7 +7,7 @@
     left: -250px;
     background-color: #111;
     padding-top: 20px;
-    transition: 0.3s;
+    transition: left 0.3s ease;
     overflow-x: hidden;
   
     &.open {

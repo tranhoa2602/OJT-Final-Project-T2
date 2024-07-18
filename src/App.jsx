@@ -21,34 +21,36 @@ const Auth = ({ onSignUp, onLogIn, user, userRole }) => {
 
   return (
     <div>
-      <h1>Firebase Role-Based Authentication</h1>
+      <h1> Firebase Role - Based Authentication </h1>{" "}
       <div>
         <input
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-        />
+        />{" "}
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-        />
+        />{" "}
         <select value={role} onChange={(e) => setRole(e.target.value)}>
-          <option value="moderator">Moderator</option>
-          <option value="admin">Admin</option>
-          <option value="employee">Employee</option>
-        </select>
-        <button onClick={() => onSignUp(email, password, role)}>Sign Up</button>
-        <button onClick={() => onLogIn(email, password)}>Log In</button>
-      </div>
+          <option value="moderator"> Moderator </option>{" "}
+          <option value="admin"> Admin </option>{" "}
+          <option value="employee"> Employee </option>{" "}
+        </select>{" "}
+        <button onClick={() => onSignUp(email, password, role)}>
+          {" "}
+          Sign Up{" "}
+        </button>{" "}
+        <button onClick={() => onLogIn(email, password)}> Log In </button>{" "}
+      </div>{" "}
       {user && (
         <div>
-          <h2>Welcome, {user.email}</h2>
-          <p>Your role is: {userRole}</p>
+          <h2> Welcome, {user.email} </h2> <p> Your role is: {userRole} </p>{" "}
         </div>
-      )}
+      )}{" "}
     </div>
   );
 };
@@ -95,15 +97,15 @@ const App = () => {
         onLogIn={handleLogIn}
         user={user}
         userRole={userRole}
-      />
+      />{" "}
       <Routes>
-        <Route path="/account-management" element={<AccountManagement />} />
-        <Route path="/position-management" element={<PositionManagement />} />
-        <Route path="/technology" element={<Technology />} />
-        <Route path="/programing-language" element={<ProgramingLanguage />} />
-        <Route path="/employee" element={<Employee />} />
-        <Route path="/project-management" element={<ProjectManagement />} />
-      </Routes>
+        <Route path="/account-management" element={<AccountManagement />} />{" "}
+        <Route path="/position-management" element={<PositionManagement />} />{" "}
+        <Route path="/technology" element={<Technology />} />{" "}
+        <Route path="/programinglanguage" element={<ProgramingLanguage />} />{" "}
+        <Route path="/employee" element={<Employee />} />{" "}
+        <Route path="/project-management" element={<ProjectManagement />} />{" "}
+      </Routes>{" "}
     </div>
   );
 };

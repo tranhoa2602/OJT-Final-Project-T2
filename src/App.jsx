@@ -15,66 +15,6 @@ import Employee from "./assets/Components/Employee/Employee";
 import ProjectManagement from "./assets/Components/ProjectManagement/ProjectManagement";
 import Login from "./assets/Components/Login/Login";
 
-// const App = () => {
-//   const [user, setUser] = useState(null);
-//   const [userData, setUserData] = useState(null);
-//   const [userRole, setUserRole] = useState("");
-//   const navigate = useNavigate();
-
-//   const handleSignUp = async (email, password, role) => {
-//     try {
-//       const user = await signUp(email, password, role);
-//       setUser(user);
-//       setUserRole(role);
-//       console.log("User signed up:", user);
-//       navigate("/account-management");
-//     } catch (error) {
-//       console.error("Error signing up:", error);
-//     }
-//   };
-
-//   const handleLogIn = async (email, password) => {
-//     try {
-//       const { user, userData } = await logIn(email, password);
-//       setUser(user);
-//       setUserData(userData);
-//       console.log("User logged in:", user);
-//       console.log("User data:", userData);
-//       navigate("/account-management");
-//     } catch (error) {
-//       console.error("Error logging in:", error);
-//     }
-//   };
-
-//   useEffect(() => {
-//     console.log("data", userData);
-//   }, [userData]);
-
-//   return (
-//     <div>
-//       <Routes>
-//         <Route
-//           path="/"
-//           element={
-//             <Login
-//               onSignUp={handleSignUp}
-//               onLogIn={handleLogIn}
-//               user={user}
-//               userRole={userRole}
-//             />
-//           }
-//         />
-//         <Route path="/account-management" element={<AccountManagement />} />
-//         <Route path="/position-management" element={<PositionManagement />} />
-//         <Route path="/technology" element={<Technology />} />
-//         <Route path="/programing-language" element={<ProgramingLanguage />} />
-//         <Route path="/employee" element={<Employee />} />
-//         <Route path="/project-management" element={<ProjectManagement />} />
-//       </Routes>
-//     </div>
-//   );
-// };
-
 const App = () => {
   const [user, setUser] = useState(null);
   const [userData, setUserData] = useState(null);

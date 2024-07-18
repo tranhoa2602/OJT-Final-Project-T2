@@ -3,7 +3,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { ref, set, get } from "firebase/database";
-import { auth, database } from "../../firebaseConfig";
+import { auth, database } from "../../../firebaseConfig";
 
 export const signUp = async (email, password, role) => {
   try {
@@ -13,16 +13,14 @@ export const signUp = async (email, password, role) => {
       password
     );
     const user = userCredential.user;
-    await set(ref(database, "users/" + user.uid), {
-      email: email,
-      role: role,
-    });
+    await set(ref(database, "users/" + user.uid), { email, role });
     return user;
   } catch (error) {
     throw error;
   }
 };
 
+// Hàm đăng nhập người dùng hiện tại
 export const logIn = async (email, password) => {
   try {
     const userCredential = await signInWithEmailAndPassword(
@@ -33,8 +31,6 @@ export const logIn = async (email, password) => {
     const user = userCredential.user;
     const snapshot = await get(ref(database, "users/" + user.uid));
     const userData = snapshot.val();
-    console.log("user", user);
-    console.log("userData", userData);
     return { user, userData };
   } catch (error) {
     throw error;

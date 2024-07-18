@@ -20,7 +20,7 @@ const Auth = ({ onSignUp, onLogIn, user, userRole }) => {
   const [role, setRole] = useState("moderator");
 
   return (
-    <div>
+    <div className="container">
       <h1>Firebase Role-Based Authentication</h1>
       <div>
         <input
@@ -44,7 +44,7 @@ const Auth = ({ onSignUp, onLogIn, user, userRole }) => {
         <button onClick={() => onLogIn(email, password)}>Log In</button>
       </div>
       {user && (
-        <div>
+        <div className="welcome-message">
           <h2>Welcome, {user.email}</h2>
           <p>Your role is: {userRole}</p>
         </div>
